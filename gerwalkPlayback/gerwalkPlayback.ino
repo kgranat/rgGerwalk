@@ -38,6 +38,7 @@ int lHipVal = 2100;
 int rHipVal = 900;
 int middleVal= 1500;
 
+int poseTime = 250;
 #include <ServoEx.h>
 ServoEx    gerwalkServo[7];
 
@@ -56,8 +57,14 @@ Serial.begin(38400);
   gerwalkServo[MIDDLE_SERVO_INDEX].attach(MIDDLE_SERVO_PIN);
 
   
-  SetServo(1000);
+  SetServo(2000);
   // put your setup code here, to run once:
+
+  setservoArray(709,2229,1180,1926,2058,916,1500);//neutral
+  SetServo(3000);
+  
+  
+
 
   
 }
@@ -65,12 +72,28 @@ Serial.begin(38400);
 void loop() {
   // put your main code here, to run repeatedly:
 
+  setservoArray(709,2229,1180,1926,2058,936,890); // head tilt left
+  SetServo(poseTime + 150);
+
+  setservoArray(709,2400,1180,2357,2058,934,890);//right leg up
+  SetServo(poseTime);
+  
+  setservoArray(709,2400,1180,1917,2058,1108,892);//right down
+
+  SetServo(poseTime);
+  
+  setservoArray(707,2400,1180,1917,2056,1108,2141); // head right
+  SetServo(poseTime + 150);
+
+  setservoArray(600,2222,731,1831,2042,1108,2141); // right leg up
+  SetServo(poseTime);
 
 
-  readAnalogs();
-  setServoAnalog();
+  setservoArray(600,2222,1321,1831,1724,1108,2141);// right leg down
+  SetServo(poseTime);
 
-  reportValues();
+  setservoArray(709,2229,1180,1926,2058,916,1500);//neutral
+  SetServo(poseTime);
 
 }
 
@@ -124,14 +147,10 @@ void reportValues()
     {
       
      Serial.print(servoValues[i]);
-     if(i != NUM_SERVOS-1 )
-     {
-      
      Serial.print(",");
-     }
     }
     
-    Serial.println(");");
+    Serial.println(")");
       lastUpdateTime = millis();
   }
 
