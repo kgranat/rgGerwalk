@@ -1,0 +1,43 @@
+{
+  "packages": [
+    {
+      "websiteURL": "https://nookduino.com",
+      "tools": [],
+      "name": "nookduino",
+      "email": "kyle@nookduino.cc",
+      "help": {
+        "online": "https://nookduino.cc"
+      },
+      "maintainer": "Nookduino",
+      "platforms": [
+
+        {
+          "name": "Nookduino AVR Boards",
+          "architecture": "avr",
+          "version": "0.0.1",
+          "category": "Nookduino",
+          "url": "https://nookduino.cc/files/nookduino-arduino.1.tar.bz2",
+          "archiveFileName": "nookduino-arduino.1.tar.bz2",
+          "checksum": "SHA-256:27f80674e11e14517fcfebf320bf7e410116c5d81b01c42815fbf7cdbf18354a",
+          "size": "1434707",
+          "help": {
+            "online": "https://forums.adafruit.com"
+          },
+          "boards": [
+            {
+              "name": "Nookduino"
+            }
+            
+          ],
+          "toolsDependencies": []
+        }
+
+     
+     
+     
+     
+      ]
+    }
+
+  ]
+}
